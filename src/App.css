@@ -1,38 +1,213 @@
-.App {
+.container {
+  display: flex;
+  margin: 0px auto;
+  position: relative;
+}
+
+table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 2px #b8b8b8;
+  table-layout: fixed;
+}
+th {
+  border-bottom: 1px solid black;
+  background-color: #dbdbdb;
+  padding: 15px;
+  text-align: left;
+}
+th:nth-child(1) {
+  width: 5%;
+}
+th:nth-child(5) {
+  width: 30%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+td:nth-child(5) a {
+  word-wrap: break-word;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+td {
+  text-align: left;
+  padding: 20px;
+  overflow: hidden;
+  white-space: nowrap;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+tr:nth-child(even) {
+  background-color: #dbdbdb;
+}
+.table-wrapper {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  transition: all ease 0.3s;
+  margin: 125px auto;
+}
+.pagination-wrapper {
+  margin: 20px auto;
   display: flex;
-  flex-direction: column;
+  width: 90%;
+  outline: none;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.sidebar-logo {
+  margin-left: 20px;
+}
+.pagination {
+  display: flex;
+  outline: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pagination > .active > a {
+  background-color: #47ccde;
+  border-color: #47ccde;
+  color: #fff;
+}
+.pagination > li > a {
+  border: 1px solid #bebfbf;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #47ccde;
+  border-color: #47ccde;
+  outline: none;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #808080;
+}
+select {
+  padding: 8px 15px 8px 10px;
+  outline: none;
+  background: #e6e4e4;
+  border: 1px solid #bebfbf;
+  border-radius: 4px;
+}
+.list-header {
+  display: flex;
+  justify-content: space-between;
+}
+.list-header > li {
+  margin-left: 50px;
+}
+.text-h1 {
+  text-align: center;
+}
+.sidebar {
+  background: #020027;
+  padding: 25px 5px;
+  width: 270px;
+  color: #fff;
+}
+.sidebar-header {
+  position: sticky;
+  top: 25px;
+}
+.sidebar-logo img {
+  width: 150px;
+}
+.sidebar-list {
+  margin: 50px 20px;
+  height: 60vh;
+}
+.sidebar-list > li {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.sidebar-list > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+.sidebar-list > li > a:hover,
+.settings-header > p > span:hover {
+  color: #100992;
+  cursor: pointer;
+}
+.settings-header {
+  position: relative;
+  margin: 50px 20px;
+}
+.settings-header > p > img {
+  width: 30px;
+}
+.settings-header > p {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+}
+.settings-header > p > span {
+  font-size: 18px;
+  font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 768px) {
+  .sidebar {
+    background: #020027;
+    padding: 15px 25px;
+    width: 100%;
+    color: #fff;
+    transition: all ease 0.3s;
   }
-  to {
-    transform: rotate(360deg);
+  .table-wrapper {
+    margin: 50px auto;
+    transition: all ease 0.3s;
+  }
+  .list-header > li {
+    margin-left: 0px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .sidebar-list,
+  .settings-header {
+    display: none;
+  }
+  .sidebar-logo {
+    margin-left: 10px;
+  }
+  table {
+    table-layout: auto;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    overflow-x: scroll;
+  }
+  .pagination-wrapper {
+    margin: 25px auto;
+    display: flex;
+    width: 90%;
+    outline: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .pagination {
+    display: flex;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
